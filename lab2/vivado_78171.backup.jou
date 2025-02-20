@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Feb 18 14:54:26 2025
+# Process ID: 78171
+# Current directory: /home/sahithyan/learning/vivado/lab2
+# Command line: vivado -mode tcl -verbose ./lab2.xpr
+# Log file: /home/sahithyan/learning/vivado/lab2/vivado.log
+# Journal file: /home/sahithyan/learning/vivado/lab2/vivado.jou
+#-----------------------------------------------------------
+open_project ./lab2.xpr
+xelab circuit
+xelab -help
+xelab lab2
