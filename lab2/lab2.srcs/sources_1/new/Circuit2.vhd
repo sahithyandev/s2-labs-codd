@@ -11,15 +11,10 @@ entity Circuit2 is
 end circuit2;
 
 architecture Behavioral of Circuit2 is
-signal ng0, ng1, ng2: std_logic;
 
 begin
-    g <= (g0 AND g1 AND g2);
-    ng0 <= NOT(g0);
-    ng1 <= NOT(g1);
-    ng2 <= NOT(g2);
-    
-    a<= (g0 AND g1 AND ng2) OR (g0 AND ng1 AND g2) OR (ng0 AND g1 AND g2);
+    g <= (g0 AND g1 AND g2);    
+    a<= not(g) and ((g0 AND g1) OR (g0 AND g2) OR (g1 AND g2));
     r <= not(g) and not(a);
 
 end Behavioral;
