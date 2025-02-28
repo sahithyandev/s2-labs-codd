@@ -55,30 +55,26 @@ architecture Behavioral of TB_4_RCA  is
 
 signal  A0, A1, A2, A3,
         B0, B1, B2, B3,
-               C_in,
-               S0,
-               S1,
-               S2,
-               S3,
-               C_out: std_logic;
+        C_in,
+        S0, S1, S2, S3,
+        C_out: std_logic;
 
 begin
         UUT: RCA_4 port map(
-                A0 => A0,
-                A1 => A1,
-                A2 => A2,
-                A3 => A3,
-                B0 => B0,
-                B1 => B1,
-                B2 => B2,
-                B3 => B3,
-                C_in => C_in,
+               A0 => A0,
+               A1 => A1,
+               A2 => A2,
+               A3 => A3,
+               B0 => B0,
+               B1 => B1,
+               B2 => B2,
+               B3 => B3,
+               C_in => C_in,
                S0 => S0,
                S1 => S1,
                S2 => S2,
                S3 => S3,
-               C_out => C_out
-               );
+               C_out => C_out);
         process
         begin
                 
