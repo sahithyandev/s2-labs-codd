@@ -40,30 +40,27 @@ end Mux_8_to_1;
 
 architecture Behavioral of Mux_8_to_1 is
 
-component Decoder_3_to_8
-    Port ( EN : in STD_LOGIC;
-   I : in STD_LOGIC_VECTOR (2 downto 0);
-   Y : out STD_LOGIC_VECTOR (7 downto 0));
-end component;
-
-begin
-    process(S, D)
+    component Decoder_3_to_8
+        Port ( EN : in STD_LOGIC;
+       I : in STD_LOGIC_VECTOR (2 downto 0);
+       Y : out STD_LOGIC_VECTOR (7 downto 0));
+    end component;
+    
+    signal decoder_out : std_logic_vector (7 downto 0);
+    
     begin
-        if EN = '0' then
-            Y<= '0';
-        else
-            case S is
-                when "000" => Y <= D(0);
-                when "001" => Y <= D(1);
-                when "010" => Y <= D(2);
-                when "011" => Y <= D(3);
-                when "100" => Y <= D(4);
-                when "101" => Y <= D(5);
-                when "110" => Y <= D(6);
-                when "111" => Y <= D(7);
-                when others => Y <= '0';
-            end case;
-         end if;
-    end process;
-
+        decoder: Decoder_3_to_8 port map
+            (
+                EN => EN,
+                I => S,
+                Y => decoder_out
+            );
+        Y <= (D(0) and decoder_out(0)) or
+             (D(1) and decoder_out(1)) or
+             (D(2) and decoder_out(2)) or
+             (D(3) and decoder_out(3)) or
+             (D(4) and decoder_out(4)) or
+             (D(5) and decoder_out(5)) or
+             (D(6) and decoder_out(6)) or
+             (D(7) and decoder_out(7));
 end Behavioral;
