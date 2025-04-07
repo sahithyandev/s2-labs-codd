@@ -46,7 +46,9 @@ begin
         wait for 100ns;
         B<="0110";
         wait for 100ns;
-        A<="1011";
+        A<="0011";
+        wait for 100ns;
+        A<="1101";
         wait for 100ns;
         B<="1010";
         wait for 100ns;

@@ -46,6 +46,10 @@ begin
         B<="11";
         wait for 100ns;
         A<="11";
+        wait for 100ns;
+        B<="10";
+        wait for 100ns;
+        A<="10";
         wait;
     end process;
 end Behavioral;
