@@ -38,7 +38,7 @@ begin
     );
 
     -- Clock process definition
-    clk_process : process
+    process
     begin
         while true loop
             Clk <= '0';
@@ -50,12 +50,11 @@ begin
     end process;
 
     -- Stimulus process
-    stim_process: process
+    process
     begin    
         -- Reset the counter
+        wait for 50ns;
         Res <= '1';
-        wait for 20 ns;
-        Res <= '0';
         
         -- Test Counting Up
         Dir <= '1';
