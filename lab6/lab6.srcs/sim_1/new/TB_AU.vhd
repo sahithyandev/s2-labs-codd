@@ -38,7 +38,7 @@ architecture Behavioral of TB_AU is
         );
     process begin
     Clk_tb <= not Clk_tb;
-    wait for 50ns;
+    wait for 2ns;
     end process;
     
     process
